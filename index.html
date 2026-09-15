@@ -23,6 +23,41 @@
     <!-- Style css -->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <style>
+        .bunny-box-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 24px;
+        }
+
+        .bunny-box-gallery figure {
+            margin: 0;
+            overflow: hidden;
+            border-radius: 14px;
+            background: #f6f8fb;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .bunny-box-gallery img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 991px) {
+            .bunny-box-gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 575px) {
+            .bunny-box-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
 </head>
 
 <body class="template-color-1 spybody white-version" data-spy="scroll" data-target=".navbar-example2" data-offset="150">
@@ -738,6 +773,29 @@
 
                             <!-- Start Single Portfolio  -->
                             <div class="rn-portfolio-slick">
+                                <div class="rn-portfolio" data-toggle="modal" data-target="#exampleModalCenter_10">
+                                    <div class="inner">
+                                        <div class="thumbnail">
+                                            <a href="javascript:void(0)">
+                                                <img src="assets/images/portfolio/bunny-box/04-home.jpg" alt="Bunny Box iOS application">
+                                            </a>
+                                        </div>
+                                        <div class="content">
+                                            <div class="category-info">
+                                                <div class="category-list">
+                                                    <a href="javascript:void(0)">SWIFT</a>
+                                                </div>
+                                            </div>
+                                            <h4 class="title"><a href="javascript:void(0)">Bunny Box<i
+                                                        class="feather-arrow-up-right"></i></a></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Portfolio  -->
+
+                            <!-- Start Single Portfolio  -->
+                            <div class="rn-portfolio-slick">
                                 <div class="rn-portfolio" data-toggle="modal" data-target="#exampleModalCenter_9">
                                     <div class="inner">
                                         <div class="thumbnail">
@@ -1009,6 +1067,40 @@
 
 
 		<!-- Fill Projects Data here -->
+
+
+        <div class="modal fade" id="exampleModalCenter_10" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i data-feather="x"></i></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-content">
+                            <h3><span>iOS · E-commerce</span> Bunny Box</h3>
+                            <p class="mb--10">A personalized gifting experience that helps customers discover curated boxes, mystery gifts, and limited-time offers for every occasion.</p>
+                            <p>• Browse boxes and gift categories.</p>
+                            <p>• Discover and purchase mystery boxes and special offers.</p>
+                            <p>• Manage personal preferences for more relevant gift recommendations.</p>
+                        </div>
+
+                        <div class="bunny-box-gallery" aria-label="Bunny Box application screenshots">
+                            <figure><img src="assets/images/portfolio/bunny-box/01-launch.jpg" alt="Bunny Box launch screen" loading="lazy"></figure>
+                            <figure><img src="assets/images/portfolio/bunny-box/02-sign-in.jpg" alt="Bunny Box sign-in screen" loading="lazy"></figure>
+                            <figure><img src="assets/images/portfolio/bunny-box/03-sign-up.jpg" alt="Bunny Box sign-up screen" loading="lazy"></figure>
+                            <figure><img src="assets/images/portfolio/bunny-box/04-home.jpg" alt="Bunny Box home screen" loading="lazy"></figure>
+                            <figure><img src="assets/images/portfolio/bunny-box/05-boxes.jpg" alt="Bunny Box products screen" loading="lazy"></figure>
+                            <figure><img src="assets/images/portfolio/bunny-box/06-box-categories.jpg" alt="Bunny Box category details screen" loading="lazy"></figure>
+                            <figure><img src="assets/images/portfolio/bunny-box/07-mystery-categories.jpg" alt="Bunny Box mystery categories screen" loading="lazy"></figure>
+                            <figure><img src="assets/images/portfolio/bunny-box/08-offers.jpg" alt="Bunny Box offers screen" loading="lazy"></figure>
+                            <figure><img src="assets/images/portfolio/bunny-box/09-profile.jpg" alt="Bunny Box profile screen" loading="lazy"></figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
