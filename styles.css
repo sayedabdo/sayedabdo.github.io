@@ -160,3 +160,89 @@ body.light .project-card-top>.project-links .project-link,
 body.light .project-card-top>.project-links .report-link{background:#f7f9fd;border-color:#c4d1e3;color:var(--accent)}
 body.light .project-card .tags span{background:#f7f9fd;border-color:#cbd7e9;color:#405672}
 body.light .project-private-preview{background:radial-gradient(circle,#fff,#e8effc 72%)}
+
+/* Give every product a restrained visual identity drawn from its app icon. */
+.project[style*="--project-accent"]{
+  border-color:color-mix(in srgb,var(--project-accent) 34%,var(--line));
+  background:#12141c;
+}
+.project[style*="--project-accent"]:hover{
+  border-color:var(--project-accent);
+  box-shadow:0 18px 50px color-mix(in srgb,var(--project-accent) 14%,transparent);
+}
+.project[style*="--project-accent"] .meta,
+.project[style*="--project-accent"] .project-link,
+.project[style*="--project-accent"] .report-link{color:var(--project-accent)}
+.project[style*="--project-accent"] .project-icon{
+  border-color:color-mix(in srgb,var(--project-accent) 62%,var(--line));
+  box-shadow:0 7px 20px color-mix(in srgb,var(--project-accent) 14%,transparent);
+}
+.project[style*="--project-accent"] .tags span{
+  border-color:color-mix(in srgb,var(--project-accent) 20%,var(--line));
+  background:#191c25;
+}
+.project-card[style*="--project-accent"]>p{position:relative;padding-left:16px}
+.project-card[style*="--project-accent"]>p::before{
+  content:"";position:absolute;left:0;top:.72em;width:6px;height:6px;border-radius:50%;
+  background:var(--project-accent);box-shadow:0 0 10px var(--project-accent);
+}
+.project[style*="--project-accent"] .project-gallery,
+.project-viewer[style*="--project-accent"] .project-gallery{
+  border-color:color-mix(in srgb,var(--project-accent) 66%,#263548);
+  background:color-mix(in srgb,var(--project-accent) 15%,#0a0d13);
+  box-shadow:inset 0 0 55px color-mix(in srgb,var(--project-accent) 8%,transparent);
+}
+.project[style*="--project-accent"] .gallery-stage,
+.project-viewer[style*="--project-accent"] .gallery-stage{
+  background:
+    linear-gradient(color-mix(in srgb,var(--project-accent) 14%,transparent) 1px,transparent 1px),
+    linear-gradient(90deg,color-mix(in srgb,var(--project-accent) 14%,transparent) 1px,transparent 1px),
+    radial-gradient(circle at 50% 48%,color-mix(in srgb,var(--project-accent) 38%,#18202d),color-mix(in srgb,var(--project-accent) 12%,#070a10) 72%);
+  background-size:30px 30px,30px 30px,auto;
+}
+.project[style*="--project-accent"] .gallery-arrow,
+.project-viewer[style*="--project-accent"] .gallery-arrow{
+  border-color:color-mix(in srgb,var(--project-accent) 68%,#536274);
+}
+.project[style*="--project-accent"] .gallery-arrow:hover,
+.project-viewer[style*="--project-accent"] .gallery-arrow:hover{background:var(--project-accent);color:#08101b}
+.project[style*="--project-accent"] .gallery-dots button.active,
+.project-viewer[style*="--project-accent"] .gallery-dots button.active{background:var(--project-accent)}
+.project[style*="--project-accent"] .gallery-count,
+.project-viewer[style*="--project-accent"] .gallery-count{color:color-mix(in srgb,var(--project-accent) 74%,#fff)}
+.project[style*="--project-accent"] .gallery-footer,
+.project-viewer[style*="--project-accent"] .gallery-footer{
+  border-top:1px solid color-mix(in srgb,var(--project-accent) 24%,transparent);
+  background:color-mix(in srgb,var(--project-accent) 13%,#11151d);
+}
+.project.showcase[style*="--project-accent"]{
+  border-color:color-mix(in srgb,var(--project-accent) 60%,var(--line));
+  background:linear-gradient(135deg,color-mix(in srgb,var(--project-accent) 12%,#10202f),#0d1825 70%);
+}
+.project.showcase[style*="--project-accent"] .featured-label{
+  color:var(--project-accent);
+  border-color:color-mix(in srgb,var(--project-accent) 55%,var(--line));
+}
+.project-viewer[style*="--project-accent"] .project-dialog{
+  border-color:color-mix(in srgb,var(--project-accent) 62%,var(--line));
+}
+.project-viewer[style*="--project-accent"] .project-dialog-copy .meta,
+.project-viewer[style*="--project-accent"] .project-link,
+.project-viewer[style*="--project-accent"] .report-link{color:var(--project-accent)}
+
+body.light .project[style*="--project-accent"]{
+  border-color:color-mix(in srgb,var(--project-accent) 42%,#c8d5e8);
+  background:#fff;
+  box-shadow:0 14px 36px color-mix(in srgb,var(--project-accent) 8%,rgba(34,63,105,.06));
+}
+body.light .project[style*="--project-accent"]:hover{
+  border-color:var(--project-accent);
+  box-shadow:0 18px 46px color-mix(in srgb,var(--project-accent) 15%,rgba(34,63,105,.08));
+}
+body.light .project.showcase[style*="--project-accent"]{
+  background:linear-gradient(135deg,color-mix(in srgb,var(--project-accent) 10%,#fff),#f8fbff 72%);
+}
+body.light .project[style*="--project-accent"] .tags span{
+  border-color:color-mix(in srgb,var(--project-accent) 28%,#cbd7e9);
+  background:color-mix(in srgb,var(--project-accent) 6%,#fff);
+}
