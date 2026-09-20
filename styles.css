@@ -185,7 +185,13 @@ body.light .project-private-preview{background:radial-gradient(circle,#fff,#e8ef
 .project-card[style*="--project-accent"]>p::before{
   content:"";position:absolute;left:0;top:.72em;width:6px;height:6px;border-radius:50%;
   background:var(--project-accent);box-shadow:0 0 10px var(--project-accent);
+  animation:project-accent-pulse 2.2s ease-out infinite;
 }
+@keyframes project-accent-pulse{
+  0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--project-accent) 46%,transparent),0 0 8px var(--project-accent);transform:scale(1)}
+  50%{box-shadow:0 0 0 7px transparent,0 0 13px var(--project-accent);transform:scale(1.12)}
+}
+@media(prefers-reduced-motion:reduce){.project-card[style*="--project-accent"]>p::before{animation:none}}
 .project[style*="--project-accent"] .project-gallery,
 .project-viewer[style*="--project-accent"] .project-gallery{
   border-color:color-mix(in srgb,var(--project-accent) 66%,#263548);
