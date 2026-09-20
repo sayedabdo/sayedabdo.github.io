@@ -15,7 +15,7 @@ const galleryMarkup=p=>{const last=p.gallery.length-1;const next=p.gallery.lengt
 const projectLinks=p=>`<div class="project-links">${p.url?`<a class="project-link" href="${p.url}" target="_blank" rel="noopener noreferrer">${p.urlLabel||'App Store'} ↗</a>`:''}${p.reportUrl?`<button class="project-link report-link" type="button" data-report="${p.reportUrl}" data-report-title="${p.name} project report">Project report ↗</button>`:''}</div>`;
 document.querySelector('#project-list').innerHTML=projects.map((p,i)=>{
  const number=String(i+1).padStart(2,'0');
- if(p.featured)return `<article class="project featured showcase" style="--project-accent:${p.accent}"><div class="project-copy"><span class="meta">${number} / ${p.type}</span><span class="featured-label">Featured project</span><h3>${p.name}</h3><p>${p.description}</p><div class="tags">${p.tags.slice(0,6).map(t=>`<span>${t}</span>`).join('')}${p.tags.length>6?`<span>+${p.tags.length-6} more</span>`:''}</div>${projectLinks(p)}</div>${galleryMarkup(p)}</article>`;
+ if(p.featured)return `<article class="project featured showcase" data-project-card="${i}" style="--project-accent:${p.accent}"><div class="project-copy"><span class="meta">${number} / ${p.type}</span><span class="featured-label">Featured project</span><h3>${p.name}</h3><p>${p.description}</p><div class="tags">${p.tags.slice(0,6).map(t=>`<span>${t}</span>`).join('')}${p.tags.length>6?`<span>+${p.tags.length-6} more</span>`:''}</div>${projectLinks(p)}</div>${galleryMarkup(p)}</article>`;
  const shownTags=p.tags.slice(0,5);
  const initials=p.name.split(/\s+/).filter(Boolean).slice(0,2).map(word=>word[0]).join('').toUpperCase();
  return `<article class="project project-card" data-project-card="${i}" style="--project-accent:${p.accent}"><div class="project-card-top"><button class="project-card-head project-open" type="button" data-project="${i}" aria-label="Open ${p.name} project details"><span class="project-icon" aria-hidden="true">${p.icon?`<img src="${p.icon}" alt="">`:initials}</span><span class="project-title"><span class="meta">${p.type}</span><strong>${p.name}</strong></span></button>${projectLinks(p)}</div><p>${p.description}</p><div class="tags">${shownTags.map(t=>`<span>${t}</span>`).join('')}${p.tags.length>shownTags.length?`<span>+${p.tags.length-shownTags.length} more</span>`:''}</div>${p.gallery?galleryMarkup(p):'<div class="project-private-preview"><span>Private product</span><small>Screens available on request</small></div>'}</article>`;
@@ -39,7 +39,7 @@ function openProject(index,trigger){
 }
 document.querySelectorAll('.project-open').forEach(button=>button.addEventListener('click',()=>openProject(button.dataset.project,button)));
 document.querySelectorAll('[data-project-card]').forEach(card=>card.addEventListener('click',event=>{
- if(event.target.closest('a,button,.project-gallery'))return;
+ if(event.target.closest('a,button'))return;
  openProject(card.dataset.projectCard,card.querySelector('.project-open'));
 }));
 projectDialogClose.addEventListener('click',closeProject);
